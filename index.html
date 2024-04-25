@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Company website</title>
+
+    <style>
+        body{
+            font-family:  Helvetica, sans-serif;
+        }
+
+        /* navbar style */
+        #navbar{
+            margin: auto;
+            /* margin-top: -500px; */
+            height: 100px; 
+            width: 85%;
+            background-color: white ;
+            z-index: 1;
+            margin-top: 50px;
+            margin-left: 100px;
+            position: fixed;
+            display: flex;
+            
+        }
+        ul{
+            list-style-type: none;
+            /* float: right;
+            margin-left: 375px; */
+            /* margin-bottom: 20px; */
+            padding-left: -50px;
+            margin-right: -50px;
+            margin-left: -50px;
+        }
+        li{
+            float: left;
+            margin-top: 25px;
+           
+        }
+        li a{
+            color: black;
+            text-decoration: none;
+            margin: 40px;
+            margin-top: 50px;
+            padding-bottom: 50px;   
+            font-size: 20px;
+        }
+        li a:hover{
+            text-decoration: underline;
+        }
+        li #logo{
+            padding-right: 250px;
+            text-decoration: none;
+            padding-bottom: 10px;
+        }
+        #login:hover{
+            color: gray;
+            text-decoration: none;
+        }
+        #book{
+            border: 2px solid black;
+            background-color: black;
+            color: white;
+            border-radius: 30px;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-decoration: none;
+        }
+        #book:hover{
+            background-color: white;
+            color: gray;
+            /* border: none; */
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+
+        #clean_img{
+            margin-top: -100px;
+            z-index: -1;
+            width: 100%;
+            position: relative
+        }
+
+        /* front style */
+        #front_text{
+            /* padding: 10px; */
+            z-index: 1;
+            margin-top: -1111px;
+            margin-left: 125px;
+            color: white;
+
+        }
+        #front_text h1{
+            font-size: 70px;
+            font-weight: 100;
+        }
+        #front_text h2{
+            font-size: 28px;
+            font-weight: 100;
+            margin-top: -10px;
+            margin-bottom: 50px;
+
+        }
+        #book_front{
+            font-size: 25px;
+            text-decoration: none;
+            border: 2px solid black;
+            border-radius: 35px;
+            margin-top: 30px;
+            padding-left: 60px;
+            padding-right: 60px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: #fffdf2;
+            color: black;
+           
+            /* text-decoration: none; */
+
+        }
+        #book_front:hover{
+            background-color: transparent;
+            color:#fffdf2;;
+            border: 2px solid white;
+            border-radius: 35px;
+        }
+
+        /* form style */
+        #form{
+            padding: 50px;
+            height: 650px;
+            z-index: 2;
+            width: 900px;
+            border-radius: 25px;
+            /* background-color: rgba(var(--bg,0,0,0),1); */
+            background-color: wheat;
+            margin-top: 200px;
+            margin-left: 450px;
+            margin-bottom: 200px;
+            
+        }
+        #form h2 , #form h3{
+            text-align: center;
+            font-weight: 100;
+
+        }
+        #form h2{
+            font-size: 40px;
+            margin-bottom: -15px;
+        }
+        #form h3{
+            font-size: 25px;
+        }
+        #form table{
+            margin-bottom: 45px;
+        }
+        #form a{
+            font-size: 25px;
+            text-decoration: none;
+            border: 2px solid black;
+            border-radius: 35px;
+            margin-top: 30px;
+            padding-left: 60px;
+            padding-right: 60px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: black ;
+            color: #fffdf2;
+            align-items: center;
+            /* display: block; */
+        }
+        #form a:hover{
+            background-color: transparent;
+            color: black;
+        }
+        #form label{
+            font-size: 18px;
+        }
+        #form input{
+            height: 50px;
+            width: 250px;
+            /* border: 2px solid black; */
+            border-radius: 15px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+
+        }
+
+        /* testimonial */
+        #testimonial{
+            padding: 50px;
+            padding-left: 105px;
+            /* padding-bottom: 150px; */
+            margin-bottom: 125px;
+            /* background-color: wheat; */
+        }
+        #testimonial_heading{
+            font-size: 50px;
+
+        }
+        #testimonial h1 , #testimonial h3{
+            font-weight: 100;
+            /* padding: 50px; */
+            /* background-color: wheat; */
+        }
+        #card1{
+        
+            padding-top: 75px;
+            padding-left: 10px;
+            /* padding-bottom: 25px; */
+            width: 275px;
+            background-color: wheat;
+            height: 350px;
+        }
+
+        #card2{
+            margin-left: 300px;
+            margin-top: -425px;
+            padding-top: 75px;
+            padding-left: 10px;
+            padding-bottom: 25px; 
+            width: 275px;
+            background-color: wheat;
+            height: 350px; 
+        }
+
+        #card3{
+            margin-left: 620px;
+            margin-top: -450px;
+            padding-top: 75px;
+            padding-left: 10px;
+            padding-bottom: 25px; 
+            width: 275px;
+            background-color: wheat;
+            height: 350px; 
+        }
+
+        #card4{
+            margin-left: 925px;
+            margin-top: -450px;
+            padding-top: 75px;
+            padding-left: 10px;
+            padding-bottom: 25px; 
+            width: 275px;
+            background-color: wheat;
+            height: 350px; 
+        }
+        /* servises style */
+        #services{
+            background-color: #4c5b5c;
+            padding-top: 100px;
+            padding-left: 125px;
+            padding-right: 125px;
+            padding-bottom: 75px;
+        }
+
+        #services h1 , #services h2{
+            font-weight: 200;
+            color: #fffdf2;
+        }
+        #services h1 {
+            font-size: 45px;
+        }
+        #services a{
+            font-size: 25px;
+            text-decoration: none;
+            border: 2px solid white;
+            border-radius: 35px;
+            margin-top: 30px;
+            padding-left: 60px;
+            padding-right: 60px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: #fffdf2 ;
+            color: #4c5b5c;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        #services a:hover{
+            background-color: transparent;
+            color: #fffdf2;
+        }
+
+        #services img{
+            margin-left: 50px;
+            margin-bottom: 75px;
+        }
+
+        /* featured section */
+        #featured{
+            background-color: #fff9af;
+            height: 250px;
+            width: 85%;
+           margin: 100px 125px;
+        }
+        #featured h1{
+            font-weight: 150; 
+            font-size: 45px;
+            padding-top: 60px;
+        }
+        #featured img{
+            padding-left: 60px;
+            padding-top: 15px;
+
+        }
+
+        /* before and after */
+        #BandA h1 , #BandA h3{
+            font-weight: 200;
+            color: black;
+        }
+        #BandA h1{
+            font-size: 45px;
+        }
+        #BandA h3{
+            font-size: 24px;
+        }
+        #BandA{
+            margin-top: 200px;
+            margin-bottom: 100px;
+        }
+        #BandA img{
+            display: inline;
+
+        }
+
+        /* How it works */
+       
+        /* #work img{
+            /* position: relative;
+         } */
+        
+        #work h1{
+            position: relative;
+            /* z-index: 1; */
+            margin-top: -600px;
+            font-weight: 200;
+            color: #fffdf2;
+            font-size: 50px;
+        }
+        #work{
+            margin-bottom: 150px;
+            /* margin-left: -200px; */
+        }
+        #work p{
+            color: white;
+            font-size: 24px;
+        }
+        /* steps */
+        /* steps1 */
+        #step1{
+            height: 200px;
+            padding-top: 50px;
+            width: 300px;
+            margin-left: 150px;
+
+
+        }
+        #step1 p{
+            margin-top: 50px;
+            padding-left: 60px;
+        }
+        #step_img{
+            background-color: #fff9af;
+            border-radius: 50%;
+            height: 60px;
+            width: 60px     ;
+        }
+        #arrow1{
+            margin-left: 250px;
+            margin-top: -175px;
+            /* margin-bottom: 44450px; */
+            padding-bottom: 200px;
+            display:inline-block;
+        }
+
+
+        /* step2 */
+        #step2{
+            height: 200px;
+            padding-top: 50px;
+            width: 300px;
+            margin-left: 450px;
+            margin-top: -250px;
+
+
+        }
+        #step2 p{
+            margin-top: 50px;
+            padding-left: 60px;
+        }
+        /* #tshirt{
+            background-color: #fff9af;
+            border-radius: 50%;
+            height: 60px;
+            width: 60px     ;
+        } */
+     
+        /* step 3 */
+        #step3{
+            height: 200px;
+            padding-top: 50px;
+            width: 350px;
+            margin-left: 700px;
+            margin-top: -250px;
+
+
+        }
+        #step3 p{
+            margin-top: 50px;
+            padding-left: 60px;
+        }
+        /* #key{
+            background-color: #fff9af;
+            border-radius: 50%;
+            height: 60px;
+            width: 60px     ;
+        }
+      */
+        /* step 4 */
+        #step4{
+            height: 200px;
+            padding-top: 50px;
+            width: 350px;
+            margin-left: 1050px;
+            margin-top: -250px;
+
+
+        }
+        #step4 p{
+            margin-top: 50px;
+            padding-left: 60px;
+        }
+      
+        /* pricing */
+        #price{
+            position: relative;
+            background-color: #4c5b5c;
+            height: 850px;
+
+        }
+        #price h1, #price h3{
+            font-weight: 200;
+            color: #fffdf2;
+        
+        }
+        #price h1{
+            font-size: 44px;
+        }
+        #price_text h3{
+            font-size: 22px;
+            /* line-height; */
+            margin-bottom: 60px;
+        }
+        #price_text a{
+            font-size: 25px;
+            text-decoration: none;
+            border: 2px solid white;
+            border-radius: 35px;
+            margin-top: 30px;
+            /* padding-left: 60px;
+            padding-right: 60px;
+            padding-top: 20px;
+            padding-bottom: 20px; */
+            padding: 20px 60px;
+            background-color: #fffdf2 ;
+            color: #4c5b5c;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        #price_text a:hover{
+            background-color: transparent;
+            color: #fffdf2;
+
+        }
+        #price_text{
+            padding-top: 200px;
+            padding-left: 150px;
+            width: 50%;
+        }
+        #price_card{
+            background-color: #fff9af;
+            height: 650px;
+            width: 500px;
+            /* padding: 150px 400px; */
+            margin-left: 60%;
+            border-radius: 30px;
+            margin-top: -500px;
+        }
+
+        #price_card a{
+            font-size: 25px;
+            text-decoration: none;
+            border: 2px solid black;
+            border-radius: 35px;
+            margin-top: 30px;
+            padding: 15px 160px;
+            background-color: black ;
+            color: #fff9af;
+            align-items: center;
+
+        }
+
+        #price_card a:hover{
+            background-color: transparent;
+            color: black;
+        }
+        #price_card h1, #price_card h3, #price_card p{
+            color: black;
+        }
+        #price_card h1{
+            font-size: 75px;
+            /* padding-top: -50px; */
+            margin-top: -25px;
+        }
+
+        #price_card h3{
+            font-size: 25px;
+            padding-top: -20px;
+        }
+        #price_card p{
+            margin-top: -35px;
+            margin-bottom: 35px;
+        }
+
+        #price_card h6{
+            color: #fffdf2;
+            background-color: black;
+            /* border: 2px solid black; */
+            width: 150px;
+            font-weight: 200;
+            font-size: 20px;
+            /* margin-top: -10px; */
+            /* position: relative; */
+        }
+        #benefit{
+            background-color: #fffdf2;
+            height: 400px;
+            /* margin-top: 40px; */
+            border-radius: 30px;
+            padding-top: 60px;
+            /* padding-bottom: -20px; */
+            
+        }
+        #benefit p{
+            /* margin-top: 50px; */
+            padding: 20px;
+            
+
+
+        }
+        /* why uss */
+
+        #whyus_img{
+            padding: 125px;
+            /* position: static; */
+        }
+
+        #whytext{
+            margin-left: 650px;
+            margin-top: -666px;
+        }
+        #whytext h1 , #whytext h2, #whytext p{
+            font-weight: 200;
+        }
+        #whytext h1{
+            font-size: 45px;
+        }
+        #whytext h2{
+            font-size: 25px;
+        }
+        #whytext p{
+            font-size: 20px;
+        }
+
+        #why1{
+            width: 350px;
+        }
+        #why2{
+            width: 350px;
+            margin-left: 400px;
+            margin-top: -125px;
+        }
+        #why3{
+            width: 350px;
+            /* margin-left: 400px; */
+            margin-top: 50px;
+        }
+        #why4{
+            width: 350px;
+            margin-left: 400px;
+            margin-top: -125px;
+            /* margin-top: 100px; */
+        }
+
+        #whytext a{
+            font-size: 25px;
+            text-decoration: none;
+            border: 2px solid black;
+            border-radius: 35px;
+            /* margin-top: 100px; */
+            padding-left: 60px;
+            padding-right: 60px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: black ;
+            color: #fffdf2;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        #whytext a:hover{
+            background-color: transparent;
+            color: black;
+        }
+
+        #whyus{
+            display: inline;
+            /* position: absolute; */
+        }
+
+        /* image before footer */
+
+        #img_before_footer{
+            /* position: static; */
+            display: block;
+            margin-top: 250px;
+            width: 100%;
+        }
+
+        /* footer */
+
+        footer{
+            background-color: #fff9af;
+            height: 400px;
+            padding-top: 50px;
+            padding-left: 50px;
+            margin-top: -50px;
+            width: 100%;
+
+        }
+
+        #logo{
+            width: 250px;
+            padding: 50px;
+        }
+        footer h1, footer h2 ,footer p , footer h3{
+            font-weight: 200;
+        }
+        
+        #logo a{
+            font-size: 25px;
+            text-decoration: none;
+            border: 2px solid black;
+            border-radius: 35px;
+            margin-top: 100px;
+            margin-bottom: 25px;
+            padding-left: 60px;
+            padding-right: 60px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: black ;
+            color: #fffdf2;
+            align-items: center;
+          
+        }
+        #logo h2{
+            margin-bottom: 100px;
+        }
+        #logo a:hover{
+            background-color: transparent;
+            color: black;
+        }
+
+        #legal{
+            width: 250px;
+            margin-left: 350px;
+            margin-top: -225px;
+
+        }
+        #legal a{
+            color: black;
+            font-size: 20px;
+            /* padding-bottom: 10px; */
+            /* margin-bottom: 10px; */
+            display: block;
+        }
+
+        #operating_hours{
+            width: 250px;
+            margin-left: 700px;
+            
+            margin-top: -220px;
+        }
+
+        #operating_hours h3{
+            line-height: 40px;
+        }
+
+        #contact{
+            width: 250px;
+            margin-left: 1000px;
+            
+            margin-top: -280px;
+
+        }
+        #contact h3{
+            line-height: 30px;
+        }
+        #contact a{
+            color: black;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navbar">
+        
+        <ul>
+            <li> <a href=""  id="logo"><img src="images\star.png" alt="" height="25px" width="25px">The Cleanic </a></li>
+            <li> <a href=""> Plan</a> </li>
+            <li> <a href="">Services</a> </li>
+            <li> <a href="">About</a> </li>
+            <li> <a href="" id="login">Log In<img id="logimg" src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fencrypted-tbn0.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcQ0s3Q1doHopxEwOZnopHymZLEiDJ3E6sjjviAAX7sU0_shk6y8yY3Gg4M%26s&sp=1713611577Tff80cc303b2cb53da98516c1c3ff30472e04ab0f9f5dd146d4a61c2c7a798c9c" alt="" ></a> </li>
+            <li> <a href="" id="book">Book Now</a> </li>
+
+        </ul>
+        
+    </div>
+
+    <div id="front">
+        <img src="https://static.wixstatic.com/media/c837a6_8bdf6d31716e47f28f553df74033ed63~mv2.jpg/v1/fill/w_1531,h_1472,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/c837a6_8bdf6d31716e47f28f553df74033ed63~mv2.jpg" alt="Cleaning_img" height="" width="100%" id="clean_img">
+       <div id="front_text">
+            <h1>Remarkably Cleaner. <br> Amazingly Simpler.</h1>
+            <h2>Providing spotless cleaning services for busy <br> people since 2035. Always on time, always smiling. <br> </h2>
+          <a href="" id="book_front">Book Now</a>
+       </div>
+    </div>
+
+    <div id="form">
+        <h2>Get a Free Estimate</h2>
+        <h3>Contact Us</h3>
+        <form action="">
+
+            <table>
+                <tr>
+                    <td><label for="firstname">First name</label> <br></td>
+                    <td><label for="lastname">Last name</label>  <br></td>
+                    <td><label for="email">Email</label> <br></td>
+                </tr>
+                <tr>
+                    <td> <input type="text" name="" id="">  <br></td>
+                    <td><input type="text" name="" id=""> <br></td>
+                    <td><input type="email" name="" id=""></td>
+                </tr>
+
+                <tr>
+                    <td> <label for="">Phone Number</label> <br></td>
+                    <td> <label for="address">Address</label> <br></td>
+                    <td> <label for="city">City</label> <br></td>
+                </tr>
+                <tr>
+                    <td> <input type="number" name="" id="">  <br></td>
+                    <td><input type="text" name="" id=""> <br></td>
+                    <td> <input type="text" name="" id=""></td>
+                </tr>
+
+                <tr> 
+                    <td> <label for="">Number of Rooms</label>  <br></td>
+                    <td> <label for="">Choose Your service</label>  <br></td>
+                </tr>
+                <tr>
+                    <td>  <input type="text" name="" id="">  <br></td>
+                    <td> <input type="text" name="" id=""> <br></td>
+                </tr>
+            </table>
+            <center> <a href="#">Get a Quote</a> </center>
+        </form>
+    </div>
+
+    <div id="testimonial">
+        <h1 id="testimonial_heading">Shiny Happy Clients</h1>
+
+        <div id="card1">
+            <h1>“I’m addicted to <br> the Cleanic!”</h1>
+            <h3>“I'm a testimonial. Click to edit me and add text that says something nice about you and your services.”</h3>
+            <h3>Jane Deirs, AR</h3>
+           <img src="" alt="">
+        </div>
+
+        <div id="card2">
+            <h1>“My flat looks like a <br> boutique hotel”</h1>
+            <h3>“I'm a testimonial. Click to edit me and add text that says something nice about you and your services.”</h3>
+            <h3>Eric Laguardia, CA</h3>
+         </div>
+
+         <div id="card3">
+            <h1>“Soft perfection”</h1>
+            <h3>“I'm a testimonial. Click to edit me and add text that says something nice about you and your services.”</h3>
+            <h3>Lena Rogel, RI</h3>
+         </div>
+         
+         <div id="card4">
+            <h1>“I’m obsessed”</h1>
+            <h3>“I'm a testimonial. Click to edit me and add text that says something nice about you and your services.”</h3>
+            <h3>Jean McDermott, CT</h3>
+         </div>
+    </div>
+
+
+
+   <div id="services">
+        <center><h1>For Anything You Need</h1></center>
+        <center><h2>Our stellar services</h2></center>
+        <img src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fi.pinimg.com%2F474x%2F27%2Ffe%2F59%2F27fe594aa5ab5d9e37ec8486a8bce22f.jpg&sp=1713951180T5cf45cffbda7e70d6700314fc0799f3f4b30fb7391ff4518e8f0be3adc5fa1c1" alt="" height="450px" width="350px">
+
+        <img src="https://www.restorations-uk.com/wp-content/uploads/2021/09/deep-clean-shutterstock_1695842029-med.jpg" alt="" height="450px" width="350px">
+
+        <img src="https://speedqueeninvestor.com/wp-content/uploads/2019/02/comment-laver-les-serviettes-de-bain.jpg" alt="" height="450px" width="350px">
+
+
+        <center><a href="">See  all services</a></center>
+    </div>
+
+   <div id="featured">
+
+        <center><h1>Featured In</h1></center>
+
+        <img src="https://static.wixstatic.com/media/c837a6_8969bfb65cc44d70837d246608d66c1f~mv2.png/v1/fill/w_209,h_83,al_c,lg_1,q_85,enc_auto/Latch_.png" alt="" height="55px" width="150px">
+        <img src="https://static.wixstatic.com/media/c837a6_ef498ccc68654474af0c90e25d60feb2~mv2.png/v1/fill/w_288,h_70,al_c,lg_1,q_85,enc_auto/4%20(1)_edited.png" alt="" height="45px" width="180px">
+        <img src="https://static.wixstatic.com/media/c837a6_8ab94f5bf37f4d2b84dd2bc2fafa0646~mv2.png/v1/fill/w_288,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c837a6_8ab94f5bf37f4d2b84dd2bc2fafa0646~mv2.png" alt="" height="55px" width="190px">
+        <img src="https://static.wixstatic.com/media/c837a6_153c9ffd3f6e4408bd66066e8a57c8a7~mv2.png/v1/fill/w_302,h_70,al_c,lg_1,q_85,enc_auto/6_edited.png" alt="" height="55px" width="180px">
+        <img src="https://static.wixstatic.com/media/c837a6_d49db5483ba64a55a6116b0e9eae27d7~mv2.png/v1/fill/w_267,h_70,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7%20(1)_edited.png" alt="" height="55px" width="190px">
+     
+    </div>
+
+    <div id="BandA">
+        <center><h1>Before & After</h1></center>
+        <center><h3>Couch cleaning </h3></center>
+        <center><img src="https://www.mollymaid.com/us/en-us/brand/_assets/images/couch-cleaning-before-and-after-(1).webp" alt=""> </center>
+    </div>
+
+      <div id="work">
+        <img src="https://static.wixstatic.com/media/c837a6_fd16501d8d69465c8b186e3b560f72dc~mv2.jpg/v1/fill/w_1531,h_742,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c837a6_fd16501d8d69465c8b186e3b560f72dc~mv2.jpg" alt="">
+        <center><h1>How It Works</h1></center>
+        <div id="step1">                
+            <center><img src="images\drop.png" alt="" height="45px" width="45px" id="step_img"></center>
+            <p>Choose your desired cleaning service</p>
+            <img src="images\right-arrow.png" alt="" id="arrow1" height="45px" width="45px">
+        </div>
+
+
+         <div id="step2">
+            <center><img src="images\t-shirt.png" alt="" height="45px" width="45px" id="step_img"></center>
+            <p>Use the Cleanic App for laundry pickup</p>
+            <img src="images\right-arrow.png" alt="" id="arrow1" height="45px" width="45px">
+        </div>
+
+
+        <div id="step3">
+            <center><img src="images\key.png" alt="" height="45px" width="45px" id="step_img"></center>
+            <p>Leave us the keys and we'll take care of the rest</p>
+            <img src="images\right-arrow.png" alt="" id="arrow1" height="45px" width="45px">
+        </div>
+
+
+            <div id="step4">
+            <center><img src="images\house.png" alt="" height="45px" width="45px" id="step_img"></center>
+            <p>Welcome back to your home clean home!</p>
+            <img src="images\right-arrow.png" alt="" id="arrow1" height="45px" width="45px">
+
+        </div> 
+    </div>
+
+    <div id="price">
+        <div id="price_text">
+            <h1>Our Plans & <br> Special Discounts</h1>
+            <h3>I'm a paragraph. Click here to add your own text <br> and edit me. It's easy. I'm a paragraph. Click here <br>to add your own text and edit me. It's easy.</h3>
+    
+            <a href="">Choose Your Plan</a>
+        </div>
+        <div id="price_card">
+            <center><h6>Best value</h6></center>
+            <center><h3>The Bi-Monthly Plan</h3></center>
+            <center><h1> <sup>$</sup>280</h1></center>
+            <center><p>Every month</p></center>
+            <center><a href="">Select</a></center>
+            <div id="benefit">
+                <center><p> --> I am a benefit</p></center>
+                <center><p> --> I am a benefit</p></center>
+                <center><p> --> I am a benefit</p></center>
+                <center><p> --> I am a benefit</p></center>
+                <center><p> --> I am a benefit</p></center>
+                <center><p> --> I am a benefit</p></center>
+                
+            </div>
+        </div>
+       
+
+    </div>
+
+    <div id="whyus">
+
+        <img src="https://static.wixstatic.com/media/c837a6_f9b8a34209ad45ccaa1f966670cd5bf9~mv2.jpg/v1/fill/w_333,h_580,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c837a6_f9b8a34209ad45ccaa1f966670cd5bf9~mv2.jpg" alt="" id="whyus_img" width="400px">
+
+        <div id="whytext">
+            <h1>Why Choose The Cleanic</h1>
+            <div id="why1">
+                
+                <h2> <img src="images\star.png" alt="" height="25px" width="25px" > Qualified Team</h2>
+                <p>I'm a paragraph. Click here to add your own text and edit me. It's easy.</p>
+            </div>
+
+           <div id="why2">
+                
+                <h2> <img src="images\star.png" alt="" height="25px" width="25px" > Same Day Availability</h2>
+                <p>I'm a paragraph. Click here to add your own text and edit me. It's easy.</p>
+            </div>
+
+           <div id="why3">
+                
+                <h2> <img src="images\star.png" alt="" height="25px" width="25px" > Outstanding Support </h2>
+                <p>I'm a paragraph. Click here to add your own text and edit me. It's easy.</p>
+            </div>
+
+          <div id="why4">
+               
+                <h2> <img src="images\star.png" alt="" height="25px" width="25px" > Eco-Friendly Materials</h2>
+                <p>I'm a paragraph. Click here to add your own text and edit me. It's easy.</p>
+            </div> 
+            <br> <br>
+            <a href="">Get to Know us</a>
+        </div>
+      
+    </div>
+
+    <div id="img_before_footer">
+        <img src="https://static.wixstatic.com/media/c837a6_c333bdc72fb24b2aac15fd8e1a3207cc~mv2.jpg/v1/fill/w_1531,h_1138,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c837a6_c333bdc72fb24b2aac15fd8e1a3207cc~mv2.jpg" alt="">
+    </div> 
+
+    
+        
+     <footer>
+        <div id="logo">
+            <h2> <img src="images\star.png" alt="" height="25px" width="25px" > The Cleanic</h1>
+            <a href="">Book now</a>
+        </div>
+
+        <div id="legal">
+            <h2>Legal</h2>
+            <br>
+            <a href="">Privacy Policy</a> <br>
+            <a href="">Terms and condition</a><br>
+            <a href="">Legal Policy</a><br>
+        </div>
+
+        <div id="operating_hours">
+            <h2>Operating Hours</h2>
+            <h3>Mon - Fri: 8am - 8pm <br> 
+                Saturday: 9am - 7pm <br>
+                Sunday: 9am - 8pm <br> 
+            </h3>
+            <br>
+            <h3>Follow us for cleaning tips</h3>
+            <!-- <a href=""></a><a href=""></a><a href=""></a><a href=""></a> -->
+        </div>
+
+        <div id="contact">
+            <h2>Contact </h2>
+            <h3>The cleanic <br>
+                500 Terry Francine Street <br>
+                San Francisco, CA 94158 <br>
+                <br>
+                123-456-7890              
+                 <br> 
+            </h3>
+            <a href="">info@mysite.com</a>
+            <br>
+        </div>
+
+        
+    </footer>
+    <center> <p>© 2024 by Paul Srijan. </p> </center>
+</body>
+
+</html>
